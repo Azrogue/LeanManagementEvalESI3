@@ -3,385 +3,60 @@ import streamlit as st
 def main():
     st.title("Quiz de Lean Management")
 
-    # Question 1
-    st.markdown("Question 1 :")
-    # Votre question 1
-    # Réponse(s) possible(s) pour la question 1
+    categories = ['Catégorie 1', 'Catégorie 2', 'Catégorie 3', 'Catégorie 4', 'Catégorie 5']
 
-    # Question 2
-    st.markdown("Question 2 :")
-    # Votre question 2
-    # Réponse(s) possible(s) pour la question 2
-    
-    # Question 2
-    st.markdown("Question 2 :")
-    # Votre question 
-    # Réponse(s) possible(s) pour la question 
-    
-    # Question 3
-    st.markdown("Question 3 :")
-    # Votre question 
-    # Réponse(s) possible(s) pour la question 
-    
-    # Question 
-    st.markdown("Question  :")
-    # Votre question 
-    # Réponse(s) possible(s) pour la question 
-    
-    # Question 
-    st.markdown("Question  :")
-    # Votre question 
-    # Réponse(s) possible(s) pour la question 
-    
-    # Question 
-    st.markdown("Question  :")
-    # Votre question 
-    # Réponse(s) possible(s) pour la question 
-    
-    # Question 
-    st.markdown("Question  :")
-    # Votre question 
-    # Réponse(s) possible(s) pour la question 
-    
-    # Question 
-    st.markdown("Question  :")
-    # Votre question 
-    # Réponse(s) possible(s) pour la question 
-    
-    # Question 
-    st.markdown("Question  :")
-    # Votre question 
-    # Réponse(s) possible(s) pour la question 
-    
-    # Question 
-    st.markdown("Question  :")
-    # Votre question 
-    # Réponse(s) possible(s) pour la question 
-    
-    # Question 
-    st.markdown("Question  :")
-    # Votre question 
-    # Réponse(s) possible(s) pour la question 
-    
-    # Question 
-    st.markdown("Question  :")
-    # Votre question 
-    # Réponse(s) possible(s) pour la question 
-    
-    # Question 
-    st.markdown("Question  :")
-    # Votre question 
-    # Réponse(s) possible(s) pour la question 
-    
-    # Question 
-    st.markdown("Question  :")
-    # Votre question 
-    # Réponse(s) possible(s) pour la question 
-    
-    # Question 
-    st.markdown("Question  :")
-    # Votre question 
-    # Réponse(s) possible(s) pour la question 
-    
-    # Question 
-    st.markdown("Question  :")
-    # Votre question 
-    # Réponse(s) possible(s) pour la question 
-    
-    # Question 
-    st.markdown("Question  :")
-    # Votre question 
-    # Réponse(s) possible(s) pour la question 
-    
-    # Question 
-    st.markdown("Question  :")
-    # Votre question 
-    # Réponse(s) possible(s) pour la question 
-    
-    # Question 
-    st.markdown("Question  :")
-    # Votre question 
-    # Réponse(s) possible(s) pour la question 
-    
-    # Question 
-    st.markdown("Question  :")
-    # Votre question 
-    # Réponse(s) possible(s) pour la question 
-    
-    # Question 
-    st.markdown("Question  :")
-    # Votre question 
-    # Réponse(s) possible(s) pour la question 
-    
-    # Question 
-    st.markdown("Question  :")
-    # Votre question 
-    # Réponse(s) possible(s) pour la question 
-    
-    # Question 
-    st.markdown("Question  :")
-    # Votre question 
-    # Réponse(s) possible(s) pour la question 
-    
-    # Question 
-    st.markdown("Question  :")
-    # Votre question 
-    # Réponse(s) possible(s) pour la question 
-    
-    # Question 
-    st.markdown("Question  :")
-    # Votre question 
-    # Réponse(s) possible(s) pour la question 
-    
-    # Question 
-    st.markdown("Question  :")
-    # Votre question 
-    # Réponse(s) possible(s) pour la question 
-    
-    # Question 
-    st.markdown("Question  :")
-    # Votre question 
-    # Réponse(s) possible(s) pour la question 
-    
-    # Question 
-    st.markdown("Question  :")
-    # Votre question 
-    # Réponse(s) possible(s) pour la question 
-    
-    # Question 
-    st.markdown("Question  :")
-    # Votre question 
-    # Réponse(s) possible(s) pour la question 
-    
-    # Question 
-    st.markdown("Question  :")
-    # Votre question 
-    # Réponse(s) possible(s) pour la question 
-    
-    # Question 
-    st.markdown("Question  :")
-    # Votre question 
-    # Réponse(s) possible(s) pour la question 
-    
-    # Question 
-    st.markdown("Question  :")
-    # Votre question 
-    # Réponse(s) possible(s) pour la question 
-    
-    # Question 
-    st.markdown("Question  :")
-    # Votre question 
-    # Réponse(s) possible(s) pour la question 
-    
-    # Question 
-    st.markdown("Question  :")
-    # Votre question 
-    # Réponse(s) possible(s) pour la question 
-    
-    # Question 
-    st.markdown("Question  :")
-    # Votre question 
-    # Réponse(s) possible(s) pour la question 
-    
-    # Question 
-    st.markdown("Question  :")
-    # Votre question 
-    # Réponse(s) possible(s) pour la question 
-    
-    # Question 
-    st.markdown("Question  :")
-    # Votre question 
-    # Réponse(s) possible(s) pour la question 
-    
-    # Question 
-    st.markdown("Question  :")
-    # Votre question 
-    # Réponse(s) possible(s) pour la question 
-    
-    # Question 
-    st.markdown("Question  :")
-    # Votre question 
-    # Réponse(s) possible(s) pour la question 
-    
-    # Question 
-    st.markdown("Question  :")
-    # Votre question 
-    # Réponse(s) possible(s) pour la question 
-    
-    # Question 
-    st.markdown("Question  :")
-    # Votre question 
-    # Réponse(s) possible(s) pour la question 
-    
-    # Question 
-    st.markdown("Question  :")
-    # Votre question 
-    # Réponse(s) possible(s) pour la question 
-    
-    # Question 
-    st.markdown("Question  :")
-    # Votre question 
-    # Réponse(s) possible(s) pour la question 
-    
-    # Question 
-    st.markdown("Question  :")
-    # Votre question 
-    # Réponse(s) possible(s) pour la question 
-    
-    # Question 
-    st.markdown("Question  :")
-    # Votre question 
-    # Réponse(s) possible(s) pour la question 
-    
-    # Question 
-    st.markdown("Question  :")
-    # Votre question 
-    # Réponse(s) possible(s) pour la question 
-    
-    # Question 
-    st.markdown("Question  :")
-    # Votre question 
-    # Réponse(s) possible(s) pour la question 
-    
-    # Question 
-    st.markdown("Question  :")
-    # Votre question 
-    # Réponse(s) possible(s) pour la question 
-    
-    # Question 
-    st.markdown("Question  :")
-    # Votre question 
-    # Réponse(s) possible(s) pour la question 
-    
-    # Question 
-    st.markdown("Question  :")
-    # Votre question 
-    # Réponse(s) possible(s) pour la question 
-    
-    # Question 
-    st.markdown("Question  :")
-    # Votre question 
-    # Réponse(s) possible(s) pour la question 
-    
-    # Question 
-    st.markdown("Question  :")
-    # Votre question 
-    # Réponse(s) possible(s) pour la question 
-    
-    # Question 
-    st.markdown("Question  :")
-    # Votre question 
-    # Réponse(s) possible(s) pour la question 
-    
-    # Question 
-    st.markdown("Question  :")
-    # Votre question 
-    # Réponse(s) possible(s) pour la question 
-    
-    # Question 
-    st.markdown("Question  :")
-    # Votre question 
-    # Réponse(s) possible(s) pour la question 
-    
-    # Question 
-    st.markdown("Question  :")
-    # Votre question 
-    # Réponse(s) possible(s) pour la question 
-    
-    # Question 
-    st.markdown("Question  :")
-    # Votre question 
-    # Réponse(s) possible(s) pour la question 
-    
-    # Question 
-    st.markdown("Question  :")
-    # Votre question 
-    # Réponse(s) possible(s) pour la question 
-    
-    # Question 
-    st.markdown("Question  :")
-    # Votre question 
-    # Réponse(s) possible(s) pour la question 
-    
-    # Question 
-    st.markdown("Question  :")
-    # Votre question 
-    # Réponse(s) possible(s) pour la question 
-    
-    # Question 
-    st.markdown("Question  :")
-    # Votre question 
-    # Réponse(s) possible(s) pour la question 
-    
-    # Question 
-    st.markdown("Question  :")
-    # Votre question 
-    # Réponse(s) possible(s) pour la question 
-    
-    # Question 
-    st.markdown("Question  :")
-    # Votre question 
-    # Réponse(s) possible(s) pour la question 
-    
-    # Question 
-    st.markdown("Question  :")
-    # Votre question 
-    # Réponse(s) possible(s) pour la question 
-    
-    # Question 
-    st.markdown("Question  :")
-    # Votre question 
-    # Réponse(s) possible(s) pour la question 
-    
-    # Question 
-    st.markdown("Question  :")
-    # Votre question 
-    # Réponse(s) possible(s) pour la question 
-    
-    # Question 
-    st.markdown("Question  :")
-    # Votre question 
-    # Réponse(s) possible(s) pour la question 
-    
-    # Question 
-    st.markdown("Question  :")
-    # Votre question 
-    # Réponse(s) possible(s) pour la question 
-    
-    # Question 
-    st.markdown("Question  :")
-    # Votre question 
-    # Réponse(s) possible(s) pour la question 
-    
-    # Question 
-    st.markdown("Question  :")
-    # Votre question 
-    # Réponse(s) possible(s) pour la question 
-    
-    # Question 
-    st.markdown("Question  :")
-    # Votre question 
-    # Réponse(s) possible(s) pour la question 
-    
-    # Question 
-    st.markdown("Question  :")
-    # Votre question 
-    # Réponse(s) possible(s) pour la question 
-    
-    # Question 
-    st.markdown("Question  :")
-    # Votre question 
-    # Réponse(s) possible(s) pour la question 
-    
-    # Question 199
-    st.markdown("Question 199 :")
-    # Votre question 199
-    # Réponse(s) possible(s) pour la question 199
+    for category in categories:
+        st.header(category)
 
-    # Question 200
-    st.markdown("Question 200 :")
-    # Votre question 200
-    # Réponse(s) possible(s) pour la question 200
+        if category == 'Catégorie 1':
+            # Questions pour la Catégorie 1
+            st.markdown("Question 1 :")
+            # Votre question 1
+            # Réponse(s) possible(s) pour la question 1
+
+            st.markdown("Question 2 :")
+            # Votre question 2
+            # Réponse(s) possible(s) pour la question 2
+
+        elif category == 'Catégorie 2':
+            # Questions pour la Catégorie 2
+            st.markdown("Question 1 :")
+            # Votre question 1
+            # Réponse(s) possible(s) pour la question 1
+
+            st.markdown("Question 2 :")
+            # Votre question 2
+            # Réponse(s) possible(s) pour la question 2
+
+        elif category == 'Catégorie 3':
+            # Questions pour la Catégorie 3
+            st.markdown("Question 1 :")
+            # Votre question 1
+            # Réponse(s) possible(s) pour la question 1
+
+            st.markdown("Question 2 :")
+            # Votre question 2
+            # Réponse(s) possible(s) pour la question 2
+
+        elif category == 'Catégorie 4':
+            # Questions pour la Catégorie 4
+            st.markdown("Question 1 :")
+            # Votre question 1
+            # Réponse(s) possible(s) pour la question 1
+
+            st.markdown("Question 2 :")
+            # Votre question 2
+            # Réponse(s) possible(s) pour la question 2
+
+        elif category == 'Catégorie 5':
+            # Questions pour la Catégorie 5
+            st.markdown("Question 1 :")
+            # Votre question 1
+            # Réponse(s) possible(s) pour la question 1
+
+            st.markdown("Question 2 :")
+            # Votre question 2
+            # Réponse(s) possible(s) pour la question 2
 
 if __name__ == "__main__":
     main()
