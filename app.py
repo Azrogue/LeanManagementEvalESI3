@@ -66,6 +66,17 @@ def insert_question(conn, question_text, correct_answer, options, category_id):
     """, (question_text, correct_answer, *options, category_id))
     conn.commit()
 
+def insert_result(conn, profile_id, correct_answers, category_id):
+    cur = conn.cursor()
+    cur.execute("""
+        INSERT INTO results (profile_id, correct_answers_count, answer_category, created_at) 
+        VALUES (?, ?, ?, datetime('now'))
+    """, (profile_id, correct_answers, category_id))
+    conn.commit()
+
+
+
+
 def insert_question_form():
     with st.form(key='insert_question_form'):
         st.title("Ajouter une question")
@@ -93,6 +104,7 @@ def page_quiz():
         cur = conn.cursor()
         cur.execute("SELECT * FROM questions WHERE category_id = ?", (categories.index(category) + 1,))
         questions = cur.fetchall()
+        answers = []
         for question in questions:
             st.header(question[1])  # question text
             options = question[3:7]  # option 1 to 4
@@ -109,7 +121,7 @@ def main():
 
     sql_create_profiles_table = """CREATE TABLE IF NOT EXISTS profiles (
                                         id integer PRIMARY KEY,
-                                        name text NOT NULL,
+                                        namxe text NOT NULL,
                                         created_at text NOT NULL
                                     );"""
 
@@ -125,14 +137,15 @@ def main():
                                     );"""
 
     sql_create_results_table = """CREATE TABLE IF NOT EXISTS results (
-                                    id integer PRIMARY KEY,
-                                    profile_id integer NOT NULL,
-                                    answer_category integer NOT NULL,
-                                    correct_answers_count integer NOT NULL,
-                                    created_at text NOT NULL,
-                                    FOREIGN KEY (profile_id) REFERENCES profiles (id),
-                                    FOREIGN KEY (answer_category) REFERENCES questions (category_id)
-                                );"""
+                                id integer PRIMARY KEY,
+                                profile_id integer NOT NULL,
+                                answer_category integer NOT NULL,
+                                correct_answers_count integer NOT NULL,
+                                created_at text NOT NULL,
+                                FOREIGN KEY (profile_id) REFERENCES profiles (id),
+                                FOREIGN KEY (answer_category) REFERENCES questions (category_id)
+                            );"""
+
 
 
     conn = create_connection()
