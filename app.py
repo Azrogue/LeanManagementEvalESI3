@@ -107,7 +107,13 @@ def main():
 
     conn = create_connection()
     if conn is not None:
+        # create profiles table
         create_table(conn, sql_create_profiles_table)
+        
+        # create questions table
+        create_table(conn, sql_create_questions_table)
+
+        # create results table
         create_table(conn, sql_create_results_table)
     else:
         print("Error! cannot create the database connection.")
