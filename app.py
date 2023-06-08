@@ -83,14 +83,28 @@ def main():
                                         created_at text NOT NULL
                                     );"""
 
+    sql_create_questions_table = """CREATE TABLE IF NOT EXISTS questions (
+                                        id integer PRIMARY KEY,
+                                        question_text text NOT NULL,
+                                        correct_answer text NOT NULL,
+                                        option_1 text NOT NULL,
+                                        option_2 text NOT NULL,
+                                        option_3 text NOT NULL,
+                                        option_4 text NOT NULL,
+                                        category_id integer NOT NULL
+                                    );"""
+
     sql_create_results_table = """CREATE TABLE IF NOT EXISTS results (
                                     id integer PRIMARY KEY,
                                     profile_id integer NOT NULL,
-                                    category text NOT NULL,
-                                    answers text NOT NULL,
+                                    answer_category integer NOT NULL,
+                                    correct_answers_count integer NOT NULL,
                                     created_at text NOT NULL,
-                                    FOREIGN KEY (profile_id) REFERENCES profiles (id)
+                                    FOREIGN KEY (profile_id) REFERENCES profiles (id),
+                                    FOREIGN KEY (answer_category) REFERENCES questions (category_id)
                                 );"""
+
+
     conn = create_connection()
     if conn is not None:
         create_table(conn, sql_create_profiles_table)
