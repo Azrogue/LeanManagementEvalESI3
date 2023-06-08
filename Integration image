@@ -1,0 +1,42 @@
+#image en ligne
+
+import streamlit as st
+
+# Liste des URLs des images
+image_urls = [
+    "https://example.com/image1.jpg",
+    "https://example.com/image2.jpg",
+    "https://example.com/image3.jpg"
+]
+
+# Affichage des images en ligne
+st.subheader("Options de réponse :")
+for image_url in image_urls:
+    col = st.beta_columns(2)  # Divise l'espace en deux colonnes
+    with col[0]:
+        st.image(image_url, use_column_width=True)
+
+# Sélection de la réponse
+selected_answer = st.selectbox("Sélectionnez la réponse", image_urls)
+st.write("Vous avez sélectionné :", selected_answer)
+
+
+#image en colonne
+
+import streamlit as st
+
+# Liste des URLs des images
+image_urls = [
+    "https://example.com/image1.jpg",
+    "https://example.com/image2.jpg",
+    "https://example.com/image3.jpg"
+]
+
+# Affichage des images en colonne
+st.subheader("Options de réponse :")
+for image_url in image_urls:
+    st.image(image_url, use_column_width=True)
+
+# Sélection de la réponse
+selected_answer = st.selectbox("Sélectionnez la réponse", image_urls)
+st.write("Vous avez sélectionné :", selected_answer)
