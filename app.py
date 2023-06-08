@@ -23,18 +23,35 @@ def get_profiles():
     cur.execute("SELECT * FROM profiles")
     return cur.fetchall()
 
+def profile_exists(conn, profile_name):
+    cur = conn.cursor()
+    cur.execute("SELECT 1 FROM profiles WHERE name=?", (profile_name,))
+    return cur.fetchone() is not None
+
+def create_profile(conn, profile_name):
+    cur = conn.cursor()
+    if not profile_exists(conn, profile_name):
+        cur.execute("INSERT INTO profiles (name, created_at) VALUES (?, datetime('now'))", (profile_name,))
+        conn.commit()
+        st.success("Profil créé avec succès!")
+    else:
+        st.warning("Ce profil existe déjà.")
+
 def page_select_profile():
     st.title("Sélectionnez votre profil")
+    conn = create_connection()
     profiles = get_profiles()
     if profiles:
-        profile_name = st.selectbox("Sélectionnez votre profil", profiles)
+        profile_names = [profile[1] for profile in profiles]
+        profile_name = st.selectbox("Sélectionnez votre profil", profile_names)
         if st.button("Sélectionner"):
             return profile_name
-    else:
-        if st.button("Créer un nouveau profil"):
-            st.text_input("Nom du profil")
-            if st.button("Créer"):
-                st.success("Profil créé avec succès!")
+    if st.button("Créer un nouveau profil"):
+        new_profile_name = st.text_input("Nom du profil")
+        if st.button("Créer"):
+            create_profile(conn, new_profile_name)
+            profiles = get_profiles()  # update the profiles list
+
 
 def page_quiz():
     st.title("Quiz sur le Lean Management")
