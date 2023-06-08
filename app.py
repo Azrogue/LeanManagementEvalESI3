@@ -73,18 +73,20 @@ def insert_question_form():
         question_text = st.text_input("Question")
         correct_answer = st.text_input("Bonne réponse")
         options = [st.text_input(f"Option {i+1}") for i in range(4)]
-        category_id = st.selectbox("Catégorie", [1, 2, 3, 4, 5])
+        
+        categories = ['Specify value', 'Identify the value stream', 'Make value flow continuously', 'Let customers pull value', 'Pursue perfection']
+        category_id = st.selectbox("Catégorie", categories)
 
         submit_button = st.form_submit_button(label='Soumettre')
         if submit_button:
             conn = create_connection()
-            insert_question(conn, question_text, correct_answer, options, category_id)
+            insert_question(conn, question_text, correct_answer, options, categories.index(category_id) + 1)
             st.success("Question ajoutée avec succès!")
 
 
 def page_quiz():
     st.title("Quiz sur le Lean Management")
-    categories = ['Catégorie 1', 'Catégorie 2', 'Catégorie 3', 'Catégorie 4', 'Catégorie 5']
+    categories = ['Specify value', 'Identify the value stream', 'Make value flow continuously', 'Let customers pull value', 'Pursue perfection']
     category = st.sidebar.selectbox("Sélectionnez une catégorie", categories)
     if category:
         conn = create_connection()
@@ -100,6 +102,7 @@ def page_quiz():
             correct_answers = sum(1 for question, answer in zip(questions, answers) if question[2] == answer)
             insert_result(conn, profile_id, correct_answers, categories.index(category) + 1)
             st.success(f"Vous avez {correct_answers} bonne(s) réponse(s) sur {len(questions)} questions.")
+
 
 def main():
     database = r"lean_management_quiz.db"
