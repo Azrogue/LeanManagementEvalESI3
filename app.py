@@ -58,6 +58,28 @@ def page_select_profile():
         else:
             st.warning("Veuillez entrer un nom de profil avant de cliquer sur 'Créer un nouveau profil'.")
 
+def insert_question(conn, question_text, correct_answer, options, category_id):
+    cur = conn.cursor()
+    cur.execute("""
+        INSERT INTO questions (question_text, correct_answer, option_1, option_2, option_3, option_4, category_id)
+        VALUES (?, ?, ?, ?, ?, ?, ?)
+    """, (question_text, correct_answer, *options, category_id))
+    conn.commit()
+
+def insert_question_form():
+    with st.form(key='insert_question_form'):
+        st.title("Ajouter une question")
+
+        question_text = st.text_input("Question")
+        correct_answer = st.text_input("Bonne réponse")
+        options = [st.text_input(f"Option {i+1}") for i in range(4)]
+        category_id = st.selectbox("Catégorie", [1, 2, 3, 4, 5])
+
+        submit_button = st.form_submit_button(label='Soumettre')
+        if submit_button:
+            conn = create_connection()
+            insert_question(conn, question_text, correct_answer, options, category_id)
+            st.success("Question ajoutée avec succès!")
 
 
 def page_quiz():
@@ -65,14 +87,19 @@ def page_quiz():
     categories = ['Catégorie 1', 'Catégorie 2', 'Catégorie 3', 'Catégorie 4', 'Catégorie 5']
     category = st.sidebar.selectbox("Sélectionnez une catégorie", categories)
     if category:
-        st.header(category)
-        st.subheader("Question")
-        answer = st.radio("Sélectionnez la bonne réponse", ["Option 1", "Option 2", "Option 3"])
+        conn = create_connection()
+        cur = conn.cursor()
+        cur.execute("SELECT * FROM questions WHERE category_id = ?", (categories.index(category) + 1,))
+        questions = cur.fetchall()
+        for question in questions:
+            st.header(question[1])  # question text
+            options = question[3:7]  # option 1 to 4
+            answer = st.radio("Sélectionnez la bonne réponse", options)
         if st.button("Soumettre"):
-            if answer == "Option 1":
-                st.success("Bonne réponse!")
-            else:
-                st.error("Mauvaise réponse.")
+            profile_id = ...  # get the current profile id
+            correct_answers = sum(1 for question, answer in zip(questions, answers) if question[2] == answer)
+            insert_result(conn, profile_id, correct_answers, categories.index(category) + 1)
+            st.success(f"Vous avez {correct_answers} bonne(s) réponse(s) sur {len(questions)} questions.")
 
 def main():
     database = r"lean_management_quiz.db"
@@ -118,9 +145,11 @@ def main():
     else:
         print("Error! cannot create the database connection.")
 
-    page = st.sidebar.selectbox("Sélectionnez une page", ["Sélection de profil", "Quiz"])
+    page = st.sidebar.selectbox("Sélectionnez une page", ["Sélection de profil", "Ajouter une question", "Quiz"])
     if page == "Sélection de profil":
         page_select_profile()
+    elif page == "Ajouter une question":
+        insert_question_form()
     elif page == "Quiz":
         page_quiz()
 
