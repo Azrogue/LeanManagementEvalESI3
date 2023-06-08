@@ -72,9 +72,19 @@ def insert_result(conn, profile_id, correct_answers, category_id):
         INSERT INTO results (profile_id, correct_answers_count, answer_category, created_at) 
         VALUES (?, ?, ?, datetime('now'))
     """, (profile_id, correct_answers, category_id))
+    print(cur.execute)
     conn.commit()
 
-
+def get_profile_id(conn, profile_name):
+    cur = conn.cursor()
+    cur.execute("SELECT id FROM profiles WHERE name=?", (profile_name,))
+    row = cur.fetchone()
+    if row is not None:
+        profile_id = row[0]
+        print(f"Profile ID for {profile_name}: {profile_id}")  # debug print
+        return profile_id
+    else:
+        return None
 
 
 def insert_question_form():
@@ -121,7 +131,7 @@ def main():
 
     sql_create_profiles_table = """CREATE TABLE IF NOT EXISTS profiles (
                                         id integer PRIMARY KEY,
-                                        namxe text NOT NULL,
+                                        name text NOT NULL,
                                         created_at text NOT NULL
                                     );"""
 
@@ -160,6 +170,8 @@ def main():
         create_table(conn, sql_create_results_table)
     else:
         print("Error! cannot create the database connection.")
+    
+
 
     page = st.sidebar.selectbox("Sélectionnez une page", ["Sélection de profil", "Ajouter une question", "Quiz"])
     if page == "Sélection de profil":
