@@ -4,7 +4,7 @@ from sqlite3 import Error
 def create_connection():
     conn = None;
     try:
-        conn = sqlite3.connect('lean_management_quiz.db') # create a database connection to a SQLite database 
+        conn = sqlite3.connect('lean_management_quiz.db')  # create a database connection to a SQLite database 
         print(sqlite3.version)
     except Error as e:
         print(e)
@@ -78,6 +78,36 @@ def main():
             'b) A process map is a tool used to track inventory levels in manufacturing.',
             'c) A process map is a document that outlines the roles and responsibilities of team members.',
             'd) A process map is a diagram that illustrates the flow of information within an organization.'
+        ]
+    },
+    {
+        'question_text': 'What are the basic mapping symbols used in process maps?',
+        'correct_answer': 'd) Circles, squares, and lines with arrows.',
+        'options': [
+            'a) Circles, rectangles, and arrows.',
+            'b) Stars, diamonds, and hexagons.',
+            'c) Squares, triangles, and lines.',
+            'd) Circles, squares, and lines with arrows.'
+        ]
+    },
+    {
+        'question_text': 'How would you define value in a process?',
+        'correct_answer': 'a) Value is anything that the customer is willing to pay for.',
+        'options': [
+            'a) Value is anything that the customer is willing to pay for.',
+            'b) Value is the price of the product or service.',
+            'c) Value is the total cost of production.',
+            'd) Value is the time taken to complete a task.'
+        ]
+    },
+    {
+        'question_text': 'What is the main goal in manufacturing when it comes to inventory?',
+        'correct_answer': 'b) The main goal is to minimize the amount of inventory.',
+        'options': [
+            'a) The main goal is to maximize the amount of inventory.',
+            'b) The main goal is to minimize the amount of inventory.',
+            'c) The main goal is to keep inventory levels constant.',
+            'd) The main goal is to optimize inventory turnover.'
         ]
     }
     ]
