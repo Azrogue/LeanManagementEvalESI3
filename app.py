@@ -1,6 +1,7 @@
 import sqlite3
 from sqlite3 import Error
 import streamlit as st
+import time
 
 def create_connection():
     conn = None;
@@ -34,6 +35,8 @@ def create_profile(conn, profile_name):
         cur.execute("INSERT INTO profiles (name, created_at) VALUES (?, datetime('now'))", (profile_name,))
         conn.commit()
         st.success("Profil créé avec succès!")
+        time.sleep(2)
+        st.experimental_rerun()
     else:
         st.warning("Ce profil existe déjà.")
 
@@ -46,11 +49,15 @@ def page_select_profile():
         profile_name = st.selectbox("Sélectionnez votre profil", profile_names)
         if st.button("Sélectionner"):
             return profile_name
+
+    new_profile_name = st.text_input("Nom du profil")
     if st.button("Créer un nouveau profil"):
-        new_profile_name = st.text_input("Nom du profil")
-        if st.button("Créer"):
+        if new_profile_name:  # ensure the name is not empty
             create_profile(conn, new_profile_name)
             profiles = get_profiles()  # update the profiles list
+        else:
+            st.warning("Veuillez entrer un nom de profil avant de cliquer sur 'Créer un nouveau profil'.")
+
 
 
 def page_quiz():
