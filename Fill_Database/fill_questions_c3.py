@@ -21,100 +21,51 @@ def main():
     conn = create_connection()
     questions = [
     {
-        'question_text': 'What are the fundamental principles of lean management?',
-        'correct_answer': 'a) Specify value, identify waste, and pursue perfection.',
+        'question_text': 'What is step 3 in lean management, and what is the significance of flow and value stream mapping?',
+        'correct_answer': 'b) Step 3 in lean management is to implement a pull system to control the flow of materials and information. Flow and value stream mapping reduce waste and lead time.',
         'options': [
-            'a) Specify value, identify waste, and pursue perfection.',
-            'b) Reduce costs, improve efficiency, and eliminate bottlenecks.',
-            'c) Enhance customer satisfaction, increase productivity, and optimize resources.',
-            'd) Streamline processes, minimize waste, and achieve continuous improvement.'
+            'a) Step 3 in lean management is to establish standardized work processes. Flow and value stream mapping ensure smooth operations.',
+            'b) Step 3 in lean management is to implement a pull system to control the flow of materials and information. Flow and value stream mapping reduce waste and lead time.',
+            'c) Step 3 in lean management is to optimize resource utilization. Flow and value stream mapping improve efficiency.',
+            'd) Step 3 in lean management is to implement automation and technology. Flow and value stream mapping increase productivity.'
         ]
     },
     {
-        'question_text': 'Explain step 1 in lean management: specifying value and identifying the 8 types of waste.',
-        'correct_answer': 'c) Step 1 includes identifying waste and eliminating non-value-added activities.',
+        'question_text': 'Why is understanding and improving processes important?',
+        'correct_answer': 'b) Understanding and improving processes enhance customer satisfaction.',
         'options': [
-            'a) Step 1 involves defining customer requirements and identifying potential areas of improvement.',
-            'b) Step 1 focuses on setting goals and objectives for lean implementation.',
-            'c) Step 1 includes identifying waste and eliminating non-value-added activities.',
-            'd) Step 1 involves analyzing process flows and optimizing resource utilization.'
+            'a) Understanding and improving processes lead to cost reduction.',
+            'b) Understanding and improving processes enhance customer satisfaction.',
+            'c) Understanding and improving processes increase employee morale.',
+            'd) Understanding and improving processes streamline decision-making.'
         ]
     },
     {
-        'question_text': 'How would you define a process?',
-        'correct_answer': 'a) A process is a systematic sequence of steps to achieve a specific goal or outcome.',
+        'question_text': 'How can organizational boundaries hinder the flow of value?',
+        'correct_answer': 'a) Organizational boundaries create silos and hinder effective communication and collaboration.',
         'options': [
-            'a) A process is a systematic sequence of steps to achieve a specific goal or outcome.',
-            'b) A process is a set of tools and technologies used to automate tasks.',
-            'c) A process is a collection of resources and materials used in production.',
-            'd) A process is a framework for managing customer relationships.'
+            'a) Organizational boundaries create silos and hinder effective communication and collaboration.',
+            'b) Organizational boundaries result in excessive bureaucracy and slow decision-making.',
+            'c) Organizational boundaries lead to a lack of accountability and responsibility.',
+            'd) Organizational boundaries increase lead time and waste in the process.'
         ]
     },
     {
-        'question_text': 'Who are the different types of customers in a process?',
-        'correct_answer': 'a) Internal customers and external customers.',
+        'question_text': 'Explain in a few words how eliminating bottlenecks and reducing buffers can improve the process.',
+        'correct_answer': 'a) By eliminating bottlenecks, the flow of work becomes smoother and faster. Reducing buffers minimizes waiting time and improves overall efficiency.',
         'options': [
-            'a) Internal customers and external customers.',
-            'b) Primary customers and secondary customers.',
-            'c) Active customers and passive customers.',
-            'd) End-users and stakeholders.'
-        ]
-    },
-    {
-        'question_text': 'Why is it important to identify the customer in a process?',
-        'correct_answer': 'b) Understanding the customer\'s needs and expectations improves process design.',
-        'options': [
-            'a) Identifying the customer helps allocate resources effectively.',
-            'b) Understanding the customer\'s needs and expectations improves process design.',
-            'c) Customer identification is essential for marketing and sales purposes.',
-            'd) Identifying the customer streamlines communication within the organization.'
-        ]
-    },
-    {
-        'question_text': 'What is a process map, and why is it useful?',
-        'correct_answer': 'a) A process map is a visual representation of a process, showing the sequence of steps and interactions.',
-        'options': [
-            'a) A process map is a visual representation of a process, showing the sequence of steps and interactions.',
-            'b) A process map is a tool used to track inventory levels in manufacturing.',
-            'c) A process map is a document that outlines the roles and responsibilities of team members.',
-            'd) A process map is a diagram that illustrates the flow of information within an organization.'
-        ]
-    },
-    {
-        'question_text': 'What are the basic mapping symbols used in process maps?',
-        'correct_answer': 'd) Circles, squares, and lines with arrows.',
-        'options': [
-            'a) Circles, rectangles, and arrows.',
-            'b) Stars, diamonds, and hexagons.',
-            'c) Squares, triangles, and lines.',
-            'd) Circles, squares, and lines with arrows.'
-        ]
-    },
-    {
-        'question_text': 'How would you define value in a process?',
-        'correct_answer': 'a) Value is anything that the customer is willing to pay for.',
-        'options': [
-            'a) Value is anything that the customer is willing to pay for.',
-            'b) Value is the price of the product or service.',
-            'c) Value is the total cost of production.',
-            'd) Value is the time taken to complete a task.'
-        ]
-    },
-    {
-        'question_text': 'What is the main goal in manufacturing when it comes to inventory?',
-        'correct_answer': 'b) The main goal is to minimize the amount of inventory.',
-        'options': [
-            'a) The main goal is to maximize the amount of inventory.',
-            'b) The main goal is to minimize the amount of inventory.',
-            'c) The main goal is to keep inventory levels constant.',
-            'd) The main goal is to optimize inventory turnover.'
+            'a) By eliminating bottlenecks, the flow of work becomes smoother and faster. Reducing buffers minimizes waiting time and improves overall efficiency.',
+            'b) Eliminating bottlenecks and reducing buffers have no impact on the process.',
+            'c) Eliminating bottlenecks and reducing buffers increase the complexity of the process.',
+            'd) Eliminating bottlenecks and reducing buffers only apply to manufacturing processes, not services.'
         ]
     }
-    ]
+]
+
 
 
     for question in questions:
-            insert_question(conn, question['question_text'], question['correct_answer'], *question['options'], 1)
+            insert_question(conn, question['question_text'], question['correct_answer'], *question['options'], 3)
 
 if __name__ == "__main__":
     main()

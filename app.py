@@ -128,7 +128,7 @@ def insert_question_form():
 
 def page_quiz():
     st.title("Quiz sur le Lean Management")
-    categories = ['Specify value', 'Identify the value stream', 'Make value flow continuously', 'Let customers pull value', 'Pursue perfection']
+    categories = ['1 - Specify value', '2 - Identify the value stream', '3 - Make value flow continuously', '4 - Let customers pull value', '5 - Pursue perfection']
     category = st.sidebar.selectbox("Sélectionnez une catégorie", categories)
     if category:
         conn = create_connection()
@@ -153,7 +153,7 @@ def page_quiz():
 def page_result():
     get_question_count()
     st.title("Résultat des tests")
-    categories = ['Specify value', 'Identify the value stream', 'Make value flow continuously', 'Let customers pull value', 'Pursue perfection']
+    categories = ['1 - Specify value', '2 - Identify the value stream', '3 - Make value flow continuously', '4 - Let customers pull value', '5 - Pursue perfection']
     conn = create_connection()
     cur = conn.cursor()
     cur.execute("SELECT * FROM results WHERE profile_id = ?", (st.session_state.profile_id_global,))
